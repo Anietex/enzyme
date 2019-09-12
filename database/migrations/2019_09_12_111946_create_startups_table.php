@@ -18,6 +18,7 @@ class CreateStartupsTable extends Migration
             $table->integer('user_id');
             $table->string('company_name');
             $table->string('location');
+            $table->string('url');
             $table->string('tagline');
             $table->string('email');
             $table->string('phone_no');
