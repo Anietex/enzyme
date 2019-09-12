@@ -24,3 +24,8 @@ Route::get('account-type','AccountController@accountType')->name('account-type')
 
 Route::get('join/startup', 'AccountController@createStartup')->name('startup-join');
 Route::get('join/investor', 'AccountController@createInvestor')->name('investor-join');
+
+
+                    // Routes for investors
+
+Route::get('all/investors', 'InvestorController@index')->name('all-investors');
