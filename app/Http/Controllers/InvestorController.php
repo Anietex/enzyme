@@ -2,21 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InvestorRegistrationRequest;
 use App\Investor;
-use Illuminate\Http\Request;
 
 class InvestorController extends Controller
 {
-    private $investor;
-
-    public function __construct(Investor $investor)
-    {
-        $this->investor=$investor;
-    }
 
     public function index()
     {
         $investors = Investor::all();
-        return view('', compact('investors'));
+        return view('investor', compact('investors'));
     }
+
+    public function createInvestor(InvestorRegistrationRequest $investorData)
+    {
+        $data = new Investor();
+        $data->ccupation     = $investorData->input('occupation');
+        $data->address       = $investorData->input('address');
+        $data->net_worth     = $investorData->input('net_worth');
+        $data->date_of_birth = $investorData->input('date_of_birth');
+        $data->save();
+
+        return redirect()->back()->with('Investor Join Successfully !');
+    }
+
 }
