@@ -22,5 +22,5 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('account-type','AccountController@accountType')->name('account-type');
 
-Route::get('join/startup', 'AccountController@createStartup')->name('startup-join');
-Route::get('join/investor', 'AccountController@createInvestor')->name('investor-join');
+Route::get('join/startup', 'AccountController@createStartup')->name('join-startup');
+Route::get('join/investor', 'AccountController@createInvestor')->name('join-investor');
