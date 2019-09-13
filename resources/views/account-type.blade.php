@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-lg-4">
-            <a href="{{route('join-startup')}}">
+            <a href="/startup/new">
                 <div class="card">
                     <div class="card-body text-center">
                         <h4>Startup</h4>
